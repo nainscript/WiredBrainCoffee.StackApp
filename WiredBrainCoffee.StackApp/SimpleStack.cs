@@ -4,21 +4,21 @@ namespace WiredBrainCoffee.StackApp
 {
     public class SimpleStack
     {
-        private double[] items;
+        private object[] items;
         private int _currentIndex = -1;
         public SimpleStack()
         {
-            items = new double[10];
+            items = new object[10];
         }
 
         public int Count => _currentIndex + 1;
 
-        public void Push(double item)
+        public void Push(object item)
         {
             items[++_currentIndex] = item;
         }
 
-        public double Pop()
+        public object Pop()
         {
             return items[_currentIndex--];
         }
