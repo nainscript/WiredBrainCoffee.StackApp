@@ -2,23 +2,45 @@
 
 namespace WiredBrainCoffee.StackApp
 {
-    public class SimpleStack
+    public class SimpleStackDouble
     {
-        private object[] items;
+        private double[] items;
         private int _currentIndex = -1;
-        public SimpleStack()
+        public SimpleStackDouble()
         {
-            items = new object[10];
+            items = new double[10];
         }
 
         public int Count => _currentIndex + 1;
 
-        public void Push(object item)
+        public void Push(double item)
         {
             items[++_currentIndex] = item;
         }
 
-        public object Pop()
+        public double Pop()
+        {
+            return items[_currentIndex--];
+        }
+    }
+
+    public class SimpleStackString
+    {
+        private string[] items;
+        private int _currentIndex = -1;
+        public SimpleStackString()
+        {
+            items = new string[10];
+        }
+
+        public int Count => _currentIndex + 1;
+
+        public void Push(string item)
+        {
+            items[++_currentIndex] = item;
+        }
+
+        public string Pop()
         {
             return items[_currentIndex--];
         }
